@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFormComponent implements OnInit {
 
+  userName: string;
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }
+
