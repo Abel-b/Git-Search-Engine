@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { GitSearchService } from '../git-search.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-search-form',
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFormComponent implements OnInit {
 
+  user:User;
+  username:string;
 
-  constructor() { }
+  constructor(private GitSearchService:GitSearchService) { }
 
   ngOnInit() {
   }
