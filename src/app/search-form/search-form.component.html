@@ -1,6 +1,32 @@
+<button><a class="repo" routerLink='/repo'>search using profile name</a></button> 
+
+
 <form (ngSubmit)='findProfile()' #searchForm='ngForm'>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="search  git users with username" [(ngModel)] ="username" name="username" (keyup)="findProfile()">
-       </div>
-      </form>
- 
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="search  git users with username" [(ngModel)]="username"
+            name="username" (keyup)="findProfile()">
+    </div>
+</form>
+<div class="row">
+    <div class="avatar">
+        <img src="{{user.avatar_url}}" class="avatarimg" alt="image">
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+
+        <div class="panel">User Name:{{user.name}}</div>
+        <div class="panel"><a href="{{user.url}}">User Url:{{user.url}}</a></div>
+        <div class="panel">User Bio:{{user.bio}}</div>
+        <div class="panel">Location:{{user.location}}</div>
+    </div>
+    <div class="col-sm-6">
+        <label for="followers">Followers:{{user.followers}}</label><br>
+        <label for="following">Following:{{user.following}}</label>
+        <div class="label label-default">This account was created on {{user.creation}}</div>
+
+    </div>
+</div>
+
+
+
