@@ -12,5 +12,10 @@ export class GitSearchService {
   user:User;
   repo:Repo;
 
-  constructor() { }
+  constructor() { 
+    this.user = new User ("","","","","",0,0,0,new Date());
+    this.repo = new Repo ("","","")
+    this.username = '';
+  }
 }
+

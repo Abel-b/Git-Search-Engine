@@ -14,6 +14,9 @@ export class SearchFormComponent implements OnInit {
 
   constructor(private GitSearchService:GitSearchService) { }
 
+    findProfile() {
+      console.log('username')
+    }
   ngOnInit() {
   }
 }
