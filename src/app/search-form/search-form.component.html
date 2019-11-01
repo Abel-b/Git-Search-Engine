@@ -1,4 +1,4 @@
-<button><a class="repo" routerLink='/repo'>search using profile name</a></button> 
+<!-- <button><a class="repo" routerLink='/repo'>search using profile name</a></button> -->
 
 
 <form (ngSubmit)='findProfile()' #searchForm='ngForm'>
@@ -9,7 +9,7 @@
 </form>
 <div class="row">
     <div class="avatar">
-        <img src="{{user.avatar_url}}" class="avatarimg" alt="image">
+        <img src="{{user.avatar_url}}" class="avatarimg">
     </div>
 </div>
 <div class="row">
@@ -26,7 +26,11 @@
         <div class="label label-default">This account was created on {{user.creation}}</div>
 
     </div>
+
+    <div class="row" *ngFor="let repo of Repos let i=index">
+        <p>Repo name:{{repo?.name}}</p>
+        <p><a href="{{repos?.html_url}}" class="btn btn-sm btn-success pull-right">View this Repo</a></p>
+        <p>Repo Description:{{repo?.description}}</p>
+
+    </div>
 </div>
-
-
-

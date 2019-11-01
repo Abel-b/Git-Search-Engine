@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Repo } from '../repo';
 import { GitSearchService } from '../git-search.service'
+import { Repo } from '../repo';
 
 @Component({
   selector: 'app-repo',

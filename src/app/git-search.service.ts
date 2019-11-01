@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http'
 import { environment } from '../environments/environment';
 import { Repo } from './repo';
 import { User } from './user';
-import { resolve } from 'url';
 
 
 @Injectable({
@@ -11,12 +10,12 @@ import { resolve } from 'url';
 })
 export class GitSearchService {
 
-  private username: string;
+  username: string;
   user: User;
   repo: Repo;
 
   constructor(private http: HttpClient) {
-    this.user = new User("", "", "", "", "", 0, 0, 0, new Date());
+    this.user = new User("", "", "", "", "", 0, 0, new Date());
     this.repo = new Repo("", "", "")
     this.username = '';
   }
@@ -32,7 +31,7 @@ export class GitSearchService {
       creation: Date;
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiurl + this.username + environment.apiKey).toPromise().then(response => {
+      this.http.get<ApiResponse>(environment.apiUrl + this.username + environment.apiKey).toPromise().then(response => {
         this.user.avatar_url = response.avatar_url
         this.user.name = response.name
         this.user.url = response.url
@@ -40,7 +39,7 @@ export class GitSearchService {
         this.user.location = response.location
         this.user.followers = response.followers
         this.user.following = response.following
-        this.user.creation = response.created_at
+        this.user.creation = response.creation
 
         resolve()
       },
