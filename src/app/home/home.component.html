@@ -2,39 +2,30 @@
 <hr>
 <div class="row">
     <div class="col-md-9">
-        <img src="{{profile.avatar_url}}" class="image" alt="Profile Image">
+        <img src="{{profile.avatar_url}}" class="circle-image" alt="Profile Image">
     </div>
-    <div class="col-md-3" ><b>User Name:{{user.name}}</b></div>
+    <div class="col-md-3"><b>User Name:{{user.name}}</b></div>
 </div>
+
 <div class="row">
-    <div class="col-md-12">
+    <div class="card bg-secondary col-md-3" *ngFor="let repo of repos">
 
-        <div *ngFor="let repo of repos">
-            <div class="row">
+        <h3>{{repo.name}}</h3>
+        <p>{{repo.description}}</p>
 
-                <div class="col-md-9">
-                    <h3>{{repo.name}}</h3>
-                    <p>{{repo.description}}</p>
+        <h4><a href="{{repo.html_url}}" target="_blank" class="btn btn-secondary">View on github</a>
+        </h4>
 
-                    <h4><a href="{{repo.html_url}}" target="_blank" class="btn btn-secondary">View on github</a>
-                    </h4>
-                </div>
-
-                <div class="col-md-3">
-                    <span class="btn btn-success">{{repo.watchers}} Stars </span>
-                    <span class="btn btn-primary">{{repo.forks}} Forks </span>
-                </div>
-
-            </div>
-            <hr>
-        </div>
-
-
-        <hr>
+        <span class="btn btn-success fa fa-star">{{repo.watchers}}</span>
+        <span class="btn btn-primary">{{repo.forks}} Forks </span>
     </div>
 
+<hr>
 
-</div>
+
+<hr>
+
+
 <p>GitHub is a website and service that we hear geeks rave about all the time, yet a lot of people don’t really
     understand what it does. Want to know what all the GitHub hubbub is about? Read on to find out.</p>
 <p>Git is a version control system, similar but better than the many alternatives available. So, what makes
