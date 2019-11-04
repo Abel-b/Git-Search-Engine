@@ -6,13 +6,12 @@
 </form>
 <div class="row">
     <div class="avatar">
-        <img src="{{profile.avatar_url}}" class="img-thumbnail github-avatar" alt="Profile Image">
+        <img class="circle-image" src="{{profile.avatar_url}}"  alt="Profile Image">
     </div>
 </div>
 <h3 class="">Repositories</h3>
     <div class="row">
-        <div class="col-md-12">
-            <div *ngFor="let repo of repos">
+            <div class="card col-lg-5 ml-3 bg-secondary" *ngFor="let repo of repos">
                 <div class="row">
 
                     <div class="col-md-9">
@@ -31,5 +30,4 @@
                 </div>
                 <hr>
             </div>
-        </div>
 </div>
