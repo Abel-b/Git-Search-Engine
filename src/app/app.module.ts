@@ -11,6 +11,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { AboutComponent } from './about/about.component';
 import { RepoComponent } from './repo/repo.component';
 import { DatePipe } from './date.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DatePipe } from './date.pipe';
     AboutComponent,
     RepoComponent,
     DatePipe,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
