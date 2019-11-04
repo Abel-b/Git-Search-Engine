@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { AboutComponent } from './about/about.component';
 import { RepoComponent } from './repo/repo.component';
+import { DatePipe } from './date.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RepoComponent } from './repo/repo.component';
     SearchFormComponent,
     AboutComponent,
     RepoComponent,
+    DatePipe,
   ],
   imports: [
     BrowserModule,
