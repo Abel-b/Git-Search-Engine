@@ -21,6 +21,13 @@ export class DatePipe implements PipeTransform {
       'November',
       'December'
     ];
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    const formattedDate = `${daysOfWeek[dateObject.getDay()]}
+                           ${dateObject.getDate()}th
+                           ${monthsOfYear[dateObject.getMonth()]}
+                           ${dateObject.getFullYear()} `;
+    return formattedDate;
   }
 
 }
