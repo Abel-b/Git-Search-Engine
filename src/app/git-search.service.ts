@@ -13,11 +13,15 @@ export class GitSearchService {
   username: string;
   user: User;
   repo: Repo;
+  clientid = '57725135f46b31a5c0a3';
+  clientsecret = 'c3f792ac19155004cdb9bc035aa9c579dc01f50c';
+
 
   constructor(private http: HttpClient) {
     this.user = new User("", "", "", "", "", 0, 0, new Date());
     this.repo = new Repo("", "", "")
-    this.username = '';
+    this.username = 'Abel-b';
+
   }
   userRequest() {
     interface ApiResponse {
@@ -51,29 +55,17 @@ export class GitSearchService {
     })
     return promise
   }
-  repoRequest() {
+  getProfileInfo() {
     interface ApiResponse {
-      name: string;
-      description: string;
-      html_url: string;
+      login: string;
     }
-
-    let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl + this.username + environment.apiRepos).toPromise().then(response => {
-        this.repo.name = response.name
-        this.repo.description = response.description
-        this.repo.html_url = response.html_url
-
-        resolve()
-      },
-        error => {
-          this.repo.name = "Oops! Unable to get repositories. Try again!"
-          reject(error)
-        }
-      )
-    })
-    return promise
+    return this.http.get('https://api.github.com/users/' + this.username + '?client_id=' + this.clientid + '&client_secret=' + this.clientsecret)
   }
+
+  getProfileRepos() {
+    return this.http.get('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientid + '&client_secret=' + this.clientsecret)
+  }
+
   updateProfile(username: string) {
     this.username = username;
   }

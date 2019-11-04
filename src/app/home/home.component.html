@@ -1,13 +1,50 @@
 <h1>GitHub</h1>
 <hr>
+<div class="row">
+    <div class="col-md-9">
+        <img src="{{profile.avatar_url}}" class="image" alt="Profile Image">
+    </div>
+    <div class="col-md-3" ><b>User Name:{{user.name}}</b></div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+        <div *ngFor="let repo of repos">
+            <div class="row">
+
+                <div class="col-md-9">
+                    <h3>{{repo.name}}</h3>
+                    <p>{{repo.description}}</p>
+
+                    <h4><a href="{{repo.html_url}}" target="_blank" class="btn btn-secondary">View on github</a>
+                    </h4>
+                </div>
+
+                <div class="col-md-3">
+                    <span class="btn btn-success">{{repo.watchers}} Stars </span>
+                    <span class="btn btn-primary">{{repo.forks}} Forks </span>
+                </div>
+
+            </div>
+            <hr>
+        </div>
+
+
+        <hr>
+    </div>
+
+
+</div>
 <p>GitHub is a website and service that we hear geeks rave about all the time, yet a lot of people don’t really
     understand what it does. Want to know what all the GitHub hubbub is about? Read on to find out.</p>
-<p>Git is a version control system, similar but better than the many alternatives available. So, what makes GitHub so
+<p>Git is a version control system, similar but better than the many alternatives available. So, what makes
+    GitHub so
     special? Git is a command-line tool, but the center around which all things involving Git revolve is the
     hub—GitHub.com—where developers store their projects and network with like minded people.</p>
 
 <h3><u>Repository</u></h3>
-<p>A repository (usually abbreviated to “repo”) is a location where all the files for a particular project are stored.
+<p>A repository (usually abbreviated to “repo”) is a location where all the files for a particular project are
+    stored.
     Each project has its own repo, and you can access it with a unique URL.</p>
 <h3><u>Other key terms in GitHub:</u></h3>
 <ul>
@@ -17,4 +54,4 @@
     <li>Cloning Projects</li>
 </ul>
 
-<h1 class="display-4" >Search any GitHub User here!<a class="text-info" routerLink="/search-form">Search</a></h1>
+<h1 class="display-4">Search any GitHub User here!<a class="text-info" routerLink="/search-form">Search</a></h1>

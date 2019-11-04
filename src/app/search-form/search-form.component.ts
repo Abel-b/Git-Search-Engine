@@ -11,23 +11,44 @@ import { RepoComponent } from '../repo/repo.component'
 })
 export class SearchFormComponent implements OnInit {
 
-  user:User;
-  repo:Repo;
-  username:string;
+  profile: any = {
+    avatar_url: ''
+  };
+  repos: any = [];
+  username: string;
+  user: any;;
 
-  constructor(private GitSearchService:GitSearchService) { }
 
-    findProfile() {
-      this.GitSearchService.updateProfile(this.username);
+
+  constructor(private GitSearchService: GitSearchService) {
+    this.GitSearchService.getProfileInfo().subscribe(user => {
+      this.user = user;
+      this.username = "";
+    });
+    this.GitSearchService.getProfileInfo().subscribe(profile => {
+      this.profile = profile
+    })
+    this.GitSearchService.getProfileRepos().subscribe(repos => {
+      this.repos = repos;
+    });
+
+  }
+
+  findProfile() {
+    this.GitSearchService.updateProfile(this.username);
+    this.GitSearchService.userRequest()
+    this.GitSearchService.updateProfile(this.username);
+    this.GitSearchService.getProfileInfo().subscribe(profile => {
       this.GitSearchService.userRequest()
       this.user = this.GitSearchService.user
-    }
-    findProfile1(){
-      this.GitSearchService.updateProfile(this.username);
-      this.GitSearchService.repoRequest();
-      this.repo=this.GitSearchService.repo
-      }
-      
+      this.profile = profile
+    });
+    this.GitSearchService.getProfileRepos().subscribe(repos => {
+      this.repos = repos;
+    });
+  }
+
+
   ngOnInit() {
   }
 }
