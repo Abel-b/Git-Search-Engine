@@ -11,11 +11,11 @@
     </div>
 </div>
 <h3 class="">Repositories</h3>
-    <div class="row">
-            <div class="card col-lg-5 ml-3 bg-secondary" *ngFor="let repo of repos">
-                <div class="row">
-
-                    <div class="col-md-9">
+<div class="row">
+    <div class="card col-lg-5 ml-3 bg-secondary" *ngFor="let repo of repos">
+        <div class="row">
+                <p appHighlight *ngIf="repo.name.length > 10">Long repo name</p>
+                        <div class="col-md-9">
                         <h3>{{repo.name}}</h3>
                         <p>{{repo.description}}</p>
 
