@@ -59,7 +59,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 MIT License
 
-Copyright (c) 2019 ibrahnerd7
+Copyright (c) 2019 Abel B.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
